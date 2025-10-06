@@ -14,7 +14,7 @@
 
 @layer components {
   .gradient-bg {
-    background: linear-gradient(135deg, #1e40af 0%, #0891b2 50%, #059669 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 30%, #334155 70%, #475569 100%);
   }
   
   .card-hover {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Dna } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +13,17 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
@@ -23,24 +34,17 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white shadow-md'
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className={`p-2 rounded-lg transition-colors duration-300 ${
-              isScrolled ? 'bg-pharma-blue' : 'bg-white/10 backdrop-blur-sm'
-            }`}>
-              <Dna className={`w-8 h-8 transition-colors duration-300 ${
-                isScrolled ? 'text-white' : 'text-white'
-              }`} />
-            </div>
-            <span className={`text-2xl font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-gray-900' : 'text-white'
-            }`}>
-              NeoOmics
-            </span>
+          <div className="flex items-center cursor-pointer" onClick={scrollToTop}>
+            <img 
+              src="/neoomics.png" 
+              alt="NeoOmics Logo" 
+              className="w-12 h-12 transition-all duration-300 hover:scale-110"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -50,23 +54,24 @@ const Header = () => {
                 key={item.name}
                 href={item.href}
                 className={`font-medium transition-colors duration-300 hover:text-pharma-teal ${
-                  isScrolled ? 'text-gray-700' : 'text-white/90'
+                  isScrolled ? 'text-gray-700' : 'text-gray-700'
                 }`}
               >
                 {item.name}
               </a>
             ))}
-            <button className={`btn-primary transition-all duration-300 ${
-              isScrolled ? '' : 'bg-white/10 text-white border border-white/20 hover:bg-white hover:text-pharma-blue'
-            }`}>
-              Get Started
+            <button 
+              className="btn-primary transition-all duration-300"
+              onClick={scrollToContact}
+            >
+              Get Consultation
             </button>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
             className={`md:hidden p-2 rounded-lg transition-colors duration-300 ${
-              isScrolled ? 'text-gray-900' : 'text-white'
+              isScrolled ? 'text-gray-900' : 'text-gray-900'
             }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -83,15 +88,21 @@ const Header = () => {
                   key={item.name}
                   href={item.href}
                   className={`font-medium transition-colors duration-300 hover:text-pharma-teal ${
-                    isScrolled ? 'text-gray-700' : 'text-white/90'
+                    isScrolled ? 'text-gray-700' : 'text-gray-700'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <button className="btn-primary w-full mt-4">
-                Get Started
+              <button 
+                className="btn-primary w-full mt-4"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  scrollToContact();
+                }}
+              >
+                Get Consultation
               </button>
             </div>
           </nav>

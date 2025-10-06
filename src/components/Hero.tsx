@@ -1,4 +1,4 @@
-import { ChevronDown, Dna } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -6,8 +6,18 @@ const Hero = () => {
     aboutSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    servicesSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center gradient-bg text-white overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center gradient-bg text-white overflow-hidden pt-20 md:pt-0">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full"></div>
@@ -16,28 +26,32 @@ const Hero = () => {
         <div className="absolute bottom-20 right-20 w-20 h-20 border border-white/20 rounded-full"></div>
       </div>
 
-      <div className="container mx-auto px-6 text-center relative z-10">
-        {/* DNA Icon */}
-        <div className="flex justify-center mb-8">
-          <div className="p-4 bg-white/10 rounded-full backdrop-blur-sm">
-            <Dna className="w-16 h-16 text-white" />
-          </div>
+      <div className="container mx-auto px-6 text-center relative z-10 mt-4 md:mt-0">
+        <div className="mb-6 mt-8 md:mt-0">
+          <img 
+            src="/neoomics_text .png" 
+            alt="NeoOmics" 
+            className="mx-auto max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl h-auto drop-shadow-2xl relative z-20"
+            style={{filter: 'drop-shadow(0 0 30px rgba(251, 191, 36, 0.5))'}} 
+          />
         </div>
-
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          <span className="text-white block">NeoOmics</span>
-        </h1>
         
         <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed text-gray-100">
           20+ years at the intersection of biology drug discovery and AI/ML, supporting cross-functional teams to turn research into clinical solutions. Expertise in omics data analysis, scalable bioinformatics platforms, and accessible AI/ML driven drug discovery and development.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <button className="btn-primary text-lg px-8 py-4">
-            Explore Services
+          <button 
+            onClick={scrollToContact}
+            className="btn-primary text-lg px-8 py-4 hover:scale-105 transform transition-all duration-200"
+          >
+            Schedule Consultation
           </button>
-          <button className="btn-secondary text-lg px-8 py-4">
-            Get In Touch
+          <button 
+            onClick={scrollToServices}
+            className="bg-white/20 backdrop-blur-sm border-2 border-white/40 text-white hover:bg-white hover:text-pharma-blue font-semibold py-3 px-6 rounded-lg transition-all duration-200 text-lg px-8 py-4 hover:scale-105 transform"
+          >
+            Explore Services
           </button>
         </div>
       </div>
