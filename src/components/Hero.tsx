@@ -29,7 +29,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed text-gray-100">
-          20+ years at the intersection of biology and AI/ML, supporting cross-functional teams to turn research into clinical solutions. Expertise in omics data analysis, scalable bioinformatics platforms, and accessible AI/ML driven drug discovery and development.
+          20+ years at the intersection of biology drug discovery and AI/ML, supporting cross-functional teams to turn research into clinical solutions. Expertise in omics data analysis, scalable bioinformatics platforms, and accessible AI/ML driven drug discovery and development.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
