@@ -1,14 +1,19 @@
 import { Calendar, Users } from 'lucide-react';
 
 const Portfolio = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const projects = [
     {
       title: 'AI-Driven Target Identification Platform',
       category: 'Machine Learning',
-      description: 'Developed a comprehensive ML platform that reduced target identification time by 60% for a major pharmaceutical company.',
+      description: 'Developed a comprehensive AI/ML platform enhanced by GraphRAG for a major pharmaceutical company.',
       image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20AI%20laboratory%20with%20scientists%20working%20on%20computers%2C%20molecular%20structures%20on%20screens%2C%20clean%20professional%20biotech%20environment&image_size=landscape_4_3',
       timeline: '8 months',
-      team: '6 specialists',
+      team: '',
       results: ['60% faster target ID', '40% cost reduction', '15 validated targets']
     },
     {
@@ -17,26 +22,27 @@ const Portfolio = () => {
       description: 'Integrated genomics, proteomics, and metabolomics data to identify novel biomarkers for oncology therapeutics.',
       image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=DNA%20double%20helix%20with%20data%20visualization%20charts%2C%20genomics%20analysis%20interface%2C%20scientific%20laboratory%20setting&image_size=landscape_4_3',
       timeline: '12 months',
-      team: '8 specialists',
-      results: ['3 novel biomarkers', '85% accuracy', 'FDA breakthrough designation']
+      team: '',
+      results: ['3 novel biomarkers', '85% accuracy', 'Published on Nature Medicine 2024'],
+      link: 'https://www.nature.com/articles/s41591-024-03235-9'
     },
     {
       title: 'Cloud-Based Bioinformatics Pipeline',
       category: 'Platform Development',
-      description: 'Built scalable cloud infrastructure processing 10TB+ of genomic data daily with automated quality control.',
+      description: 'Built scalable cloud infrastructure processing 10TB+ of omics data (RNAseq, WES, CRISPR screen, TCR/BCRseq and ctDNA) daily with automated quality control.',
       image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=cloud%20computing%20data%20center%20with%20bioinformatics%20workflows%2C%20servers%20and%20data%20visualization%20screens&image_size=landscape_4_3',
       timeline: '6 months',
-      team: '4 specialists',
+      team: '',
       results: ['10TB daily processing', '99.9% uptime', '70% cost savings']
     },
     {
-      title: 'Predictive ADMET Modeling',
+      title: 'ADC payload optimization',
       category: 'Computational Chemistry',
-      description: 'Developed machine learning models for early-stage ADMET prediction, reducing late-stage failures by 45%.',
+      description: 'Analyzed cytotoxic screening data from internal and CRO sources, comparing different payloads to inform indication pairing.',
       image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=molecular%20modeling%20software%20interface%20showing%20drug%20compounds%2C%20chemical%20structures%20and%20prediction%20models&image_size=landscape_4_3',
       timeline: '10 months',
-      team: '5 specialists',
-      results: ['45% fewer failures', '30% faster screening', '200+ compounds analyzed']
+      team: '',
+      results: ['4 data sources integrated', '20+ compounds analyzed', 'Delivered an interactive Dashboard']
     },
     {
       title: 'Clinical Trial Data Integration',
@@ -44,17 +50,17 @@ const Portfolio = () => {
       description: 'Unified disparate clinical data sources into a single platform, enabling real-time analytics and reporting.',
       image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=clinical%20research%20dashboard%20with%20patient%20data%20analytics%2C%20medical%20charts%20and%20statistical%20graphs&image_size=landscape_4_3',
       timeline: '9 months',
-      team: '7 specialists',
+      team: '',
       results: ['5 data sources unified', '50% faster reporting', 'Real-time insights']
     },
     {
       title: 'Personalized Medicine Algorithm',
       category: 'Precision Medicine',
-      description: 'Created patient stratification algorithms using genetic and clinical data to optimize treatment selection.',
+      description: 'Created patient stratification algorithms using genetic, expression, liquid biopsy and clinical data to optimize treatment selection.',
       image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=personalized%20medicine%20concept%20with%20patient%20profiles%2C%20genetic%20data%20visualization%20and%20treatment%20recommendations&image_size=landscape_4_3',
       timeline: '14 months',
-      team: '9 specialists',
-      results: ['78% response rate', '25% better outcomes', '1000+ patients stratified']
+      team: '',
+      results: ['5+ clinical trials supported', '2,000+ patients stratified', 'multiple manuscripts in review/revision']
     }
   ];
 
@@ -64,10 +70,10 @@ const Portfolio = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Success <span className="text-pharma-teal">Stories</span>
+            Case <span className="text-pharma-teal">Studies</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover how we've helped pharmaceutical and biotech companies accelerate their research
+            Discover how I've helped pharmaceutical and biotech companies accelerate their research
             and development through innovative computational solutions.
           </p>
         </div>
@@ -103,10 +109,12 @@ const Portfolio = () => {
                     <Calendar className="w-4 h-4 mr-1" />
                     {project.timeline}
                   </div>
-                  <div className="flex items-center">
-                    <Users className="w-4 h-4 mr-1" />
-                    {project.team}
-                  </div>
+                  {project.team && (
+                    <div className="flex items-center">
+                      <Users className="w-4 h-4 mr-1" />
+                      {project.team}
+                    </div>
+                  )}
                 </div>
 
                 {/* Results */}
@@ -116,7 +124,18 @@ const Portfolio = () => {
                     {project.results.map((result, resultIndex) => (
                       <li key={resultIndex} className="flex items-center text-sm text-gray-600">
                         <div className="w-1.5 h-1.5 bg-pharma-teal rounded-full mr-2"></div>
-                        {result}
+                        {result === 'Published on Nature Medicine 2024' && project.link ? (
+                          <a 
+                            href={project.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="text-pharma-blue hover:text-pharma-teal underline"
+                          >
+                            {result}
+                          </a>
+                        ) : (
+                          result
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -131,7 +150,10 @@ const Portfolio = () => {
           <p className="text-lg text-gray-600 mb-6">
             Ready to create your own success story?
           </p>
-          <button className="btn-primary text-lg px-8 py-4">
+          <button 
+            onClick={scrollToContact}
+            className="btn-primary text-lg px-8 py-4 hover:scale-105 transform transition-all duration-200"
+          >
             Start Your Project
           </button>
         </div>

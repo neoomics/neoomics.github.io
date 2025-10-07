@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -83,20 +83,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: 'admin@neoomics.com',
-      description: 'Send us an email anytime'
-    },
-    {
-      icon: Phone,
-      title: 'Phone',
-      details: '+1 (555) 123-4567',
-      description: 'Mon-Fri from 8am to 6pm'
-    },
-    {
-      icon: MapPin,
-      title: 'Office',
-      details: 'San Francisco, CA',
-      description: 'Come say hello at our HQ'
+      details: <a href="mailto:admin@neoomics.com" className="text-pharma-teal hover:text-teal-400 transition-colors">admin@neoomics.com</a>,
+      description: 'Send me an email anytime'
     }
   ];
 
@@ -109,7 +97,7 @@ const Contact = () => {
             Get In <span className="text-pharma-teal">Touch</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Ready to accelerate your drug discovery process? Let's discuss how our computational biology
+            Ready to accelerate your drug discovery process? Let's discuss how my computational biology
             expertise can transform your research.
           </p>
         </div>
@@ -120,7 +108,7 @@ const Contact = () => {
             <h3 className="text-2xl font-bold mb-8">Let's Start a Conversation</h3>
             <p className="text-gray-300 mb-8 leading-relaxed">
               Whether you're looking to optimize your drug discovery pipeline, implement AI/ML solutions,
-              or need expert guidance on computational biology challenges, we're here to help.
+              or need expert guidance on computational biology challenges, I'm here to help.
             </p>
             
             <div className="space-y-6 mb-8">
@@ -325,14 +313,14 @@ const Contact = () => {
               {submitStatus === 'success' && (
                 <div className="flex items-center p-4 bg-green-900/50 border border-green-700 rounded-lg">
                   <CheckCircle className="w-5 h-5 text-green-400 mr-3" />
-                  <p className="text-green-300">Message sent successfully! We'll get back to you within 24 hours.</p>
+                  <p className="text-green-300">Message sent successfully! I'll get back to you within 24 hours.</p>
                 </div>
               )}
               
               {submitStatus === 'error' && (
                 <div className="flex items-center p-4 bg-red-900/50 border border-red-700 rounded-lg">
                   <AlertCircle className="w-5 h-5 text-red-400 mr-3" />
-                  <p className="text-red-300">There was a technical issue. Please try again in a moment or email me directly at admin@neoomics.com</p>
+                  <p className="text-red-300">There was a technical issue. Please try again in a moment or email me directly at <a href="mailto:admin@neoomics.com" className="text-pharma-teal hover:text-teal-400 underline transition-colors">admin@neoomics.com</a></p>
                 </div>
               )}
 

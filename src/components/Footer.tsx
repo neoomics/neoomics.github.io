@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
+import { Mail, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,36 +8,27 @@ const Footer = () => {
       { name: 'AI/ML Drug Discovery', href: '#services' },
       { name: 'Omics Data Analysis', href: '#services' },
       { name: 'Bioinformatics Platforms', href: '#services' },
-      { name: 'Computational Biology', href: '#services' },
+      { name: 'Advisory & Communication', href: '#services' },
       { name: 'Clinical Data Analytics', href: '#services' },
       { name: 'Platform Integration', href: '#services' }
     ],
     company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Our Services', href: '#services' },
-      { name: 'Portfolio', href: '#portfolio' },
-      { name: 'Contact', href: '#contact' }
-    ],
-    resources: [
+      { name: 'About Me', href: '#about' },
+      { name: 'My Services', href: '#services' },
       { name: 'Case Studies', href: '#portfolio' },
-      { name: 'White Papers', href: '#' },
-      { name: 'Research Publications', href: '#' },
-      { name: 'Technical Blog', href: '#' },
-      { name: 'Industry Insights', href: '#' }
+      { name: 'Contact', href: '#contact' }
     ]
   };
 
   const socialLinks = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Github, href: '#', label: 'GitHub' }
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/tao-xie-9000b744/', label: 'LinkedIn' }
   ];
 
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-6 py-12">
         {/* Main Footer Content */}
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-8">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mb-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center mb-4">
@@ -64,23 +55,34 @@ const Footer = () => {
               <span className="text-2xl font-bold">NeoOmics</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Transforming drug discovery through computational biology and AI/ML innovation. 
-              20+ years of expertise in omics data analysis and bioinformatics platforms.
+              Transforming drug discovery through computational biology and AI/ML innovation.
             </p>
             
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
                 <Mail className="w-4 h-4 mr-3 text-pharma-teal" />
-                <span>admin@neoomics.com</span>
+                <a href="mailto:admin@neoomics.com" className="text-pharma-teal hover:text-teal-400 transition-colors">admin@neoomics.com</a>
               </div>
-              <div className="flex items-center text-gray-300">
-                <Phone className="w-4 h-4 mr-3 text-pharma-teal" />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center text-gray-300">
-                <MapPin className="w-4 h-4 mr-3 text-pharma-teal" />
-                <span>San Francisco, CA</span>
+            </div>
+            
+            {/* Social Links */}
+            <div className="mt-6">
+              <h4 className="text-sm font-semibold mb-3 text-gray-400">Follow Me</h4>
+              <div className="flex space-x-3">
+                {socialLinks.map((social, index) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.href}
+                      className="w-8 h-8 bg-gray-800 hover:bg-pharma-teal rounded-lg flex items-center justify-center transition-colors duration-200"
+                      aria-label={social.label}
+                    >
+                      <IconComponent className="w-4 h-4" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -119,60 +121,14 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Resources */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Resources</h3>
-            <ul className="space-y-2">
-              {footerLinks.resources.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-pharma-teal transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            
-            {/* Social Links */}
-            <div className="mt-6">
-              <h4 className="text-sm font-semibold mb-3 text-gray-400">Follow Us</h4>
-              <div className="flex space-x-3">
-                {socialLinks.map((social, index) => {
-                  const IconComponent = social.icon;
-                  return (
-                    <a
-                      key={index}
-                      href={social.href}
-                      className="w-8 h-8 bg-gray-800 hover:bg-pharma-teal rounded-lg flex items-center justify-center transition-colors duration-200"
-                      aria-label={social.label}
-                    >
-                      <IconComponent className="w-4 h-4" />
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
+
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm mb-4 md:mb-0">
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            <div className="text-gray-400 text-sm">
               © {currentYear} NeoOmics. All rights reserved.
-            </div>
-            <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-pharma-teal transition-colors duration-200">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-pharma-teal transition-colors duration-200">
-                Terms of Service
-              </a>
-              <a href="#" className="text-gray-400 hover:text-pharma-teal transition-colors duration-200">
-                Cookie Policy
-              </a>
             </div>
           </div>
         </div>

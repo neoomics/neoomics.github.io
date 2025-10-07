@@ -1,6 +1,10 @@
 import { Brain, Database, BarChart3, Microscope, Cpu, Network } from 'lucide-react';
 
 const Services = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
   const services = [
     {
       icon: Brain,
@@ -20,23 +24,24 @@ const Services = () => {
       description: 'Scalable computational infrastructure and pipelines for high-throughput biological data processing.',
       features: ['Cloud Computing', 'Pipeline Development', 'Data Management', 'Workflow Automation']
     },
-    {
-      icon: Microscope,
-      title: 'Computational Biology',
-      description: 'Mathematical modeling and simulation of biological systems for drug mechanism understanding.',
-      features: ['Systems Biology', 'Molecular Modeling', 'Simulation Studies', 'Mechanism Analysis']
-    },
+
     {
       icon: BarChart3,
       title: 'Clinical Data Analytics',
       description: 'Statistical analysis and interpretation of clinical trial data for regulatory submissions.',
-      features: ['Statistical Modeling', 'Clinical Endpoints', 'Regulatory Support', 'Data Interpretation']
+      features: ['Statistical Modeling', 'Companion Diagnostics', 'Regulatory Support', 'Data Interpretation']
     },
     {
       icon: Network,
       title: 'Platform Integration',
       description: 'Seamless integration of diverse data sources and analytical tools into unified platforms.',
       features: ['API Development', 'System Integration', 'Data Harmonization', 'User Interfaces']
+    },
+    {
+      icon: Microscope,
+      title: 'Advisory & Communication',
+      description: 'Clear, decision‑oriented deliverables—slides, dashboards, and briefings for biology, chemistry, and exec teams.',
+      features: ['Patient/indication selection', 'Roadmapping & study design', 'Program review & troubleshooting', 'Scientific storytelling']
     }
   ];
 
@@ -46,11 +51,10 @@ const Services = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-pharma-teal">Services</span>
+    My <span className="text-pharma-teal">Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive computational biology and AI/ML solutions designed to accelerate your drug discovery
-            and development pipeline.
+            Comprehensive computational biology and AI/ML solutions for bulk & single‑cell RNA‑seq to spatial and proteomics, TAA identification and ADC/TCE modeling, functional genomics (CRISPR) and translational/clinical studies.
           </p>
         </div>
 
@@ -85,9 +89,12 @@ const Services = () => {
           <div className="bg-gradient-to-r from-pharma-blue to-pharma-teal p-12 rounded-2xl text-white">
             <h3 className="text-3xl font-bold mb-6">Ready to Accelerate Your Research?</h3>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Let's discuss how our computational biology expertise can transform your drug discovery process.
+              Let's discuss how my computational biology expertise can transform your drug discovery process.
             </p>
-            <button className="bg-white text-pharma-blue font-semibold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+            <button 
+              onClick={scrollToContact}
+              className="bg-white text-pharma-blue font-semibold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            >
               Schedule a Consultation
             </button>
           </div>

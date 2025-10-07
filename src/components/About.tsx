@@ -2,9 +2,9 @@ import { Award, Users, Target, TrendingUp } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { icon: Award, value: '20+', label: 'Years Experience' },
+    { icon: Award, value: '20+', label: 'Years Industrial Experience' },
     { icon: Users, value: '100+', label: 'Projects Completed' },
-    { icon: Target, value: '50+', label: 'Successful Launches' },
+    { icon: Target, value: '10+', label: 'Successful Launches' },
     { icon: TrendingUp, value: '95%', label: 'Client Satisfaction' },
   ];
 
@@ -32,8 +32,16 @@ const About = () => {
             About <span className="text-pharma-teal">NeoOmics</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            From computational biology research to life-saving therapies, NeoOmics has established itself as a trusted
-            partner in pharmaceutical and biotechnology innovation.
+            Neoomics partners with biotech and pharma teams to turn complex data into actionable decisions, led by{' '}
+            <a 
+              href="https://www.linkedin.com/in/tao-xie-9000b744/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-pharma-blue hover:text-pharma-teal transition-colors underline"
+            >
+              Tao Xie, PhD
+            </a>{' '}
+            (former Director of Computational Biology, Pfizer).
           </p>
         </div>
 
@@ -66,7 +74,7 @@ const About = () => {
         {/* Mission Statement */}
         <div className="mt-20 bg-white p-12 rounded-2xl shadow-xl">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">My Mission</h3>
             <p className="text-xl text-gray-600 leading-relaxed">
               To bridge the gap between cutting-edge computational biology and practical clinical applications,
               empowering pharmaceutical and biotech companies to accelerate their drug discovery and development
