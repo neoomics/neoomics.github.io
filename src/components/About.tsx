@@ -32,7 +32,7 @@ const About = () => {
             About <span className="text-pharma-teal">NeoOmics</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Neoomics partners with biotech and pharma teams to turn complex data into actionable decisions, led by{' '}
+            NeoOmics partners with biotech and pharma teams to turn complex data into actionable decisions, led by{' '}
             <a 
               href="https://www.linkedin.com/in/tao-xie-9000b744/" 
               target="_blank" 
@@ -71,17 +71,7 @@ const About = () => {
           ))}
         </div>
 
-        {/* Mission Statement */}
-        <div className="mt-20 bg-white p-12 rounded-2xl shadow-xl">
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">My Mission</h3>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              To bridge the gap between cutting-edge computational biology and practical clinical applications,
-              empowering pharmaceutical and biotech companies to accelerate their drug discovery and development
-              processes through innovative AI/ML solutions and deep scientific expertise.
-            </p>
-          </div>
-        </div>
+
       </div>
     </section>
   );

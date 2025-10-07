@@ -29,7 +29,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10 mt-4 md:mt-0">
         <div className="mb-6 mt-8 md:mt-0">
           <img 
-            src="/neoomics_text .png" 
+            src="/NeoOmics_text.png" 
             alt="NeoOmics" 
             className="mx-auto max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl h-auto drop-shadow-2xl relative z-20"
             style={{filter: 'drop-shadow(0 0 30px rgba(251, 191, 36, 0.5))'}} 
@@ -37,7 +37,7 @@ const Hero = () => {
         </div>
         
         <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed text-gray-100">
-          Neoomics provides AI-driven multi-omics and translational data science solutions to accelerate drug discovery and development for biotech and pharma teams.
+          NeoOmics partners with biotech and pharma teams to transform complex biological data into actionable insights, advancing discovery and early clinical development through AI-powered multi-omics analytics.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">

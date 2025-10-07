@@ -51,7 +51,7 @@ const Services = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-    My <span className="text-pharma-teal">Services</span>
+    <span className="text-pharma-teal">Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Comprehensive computational biology and AI/ML solutions for bulk & single‑cell RNA‑seq to spatial and proteomics, TAA identification and ADC/TCE modeling, functional genomics (CRISPR) and translational/clinical studies.
@@ -89,7 +89,7 @@ const Services = () => {
           <div className="bg-gradient-to-r from-pharma-blue to-pharma-teal p-12 rounded-2xl text-white">
             <h3 className="text-3xl font-bold mb-6">Ready to Accelerate Your Research?</h3>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Let's discuss how my computational biology expertise can transform your drug discovery process.
+              Let's discuss how NeoOmics's computational biology expertise can transform your drug discovery process.
             </p>
             <button 
               onClick={scrollToContact}

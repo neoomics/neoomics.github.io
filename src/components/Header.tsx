@@ -26,9 +26,9 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Case Studies', href: '#portfolio' },
+    { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -41,7 +41,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center cursor-pointer" onClick={scrollToTop}>
             <img 
-              src="/neoomics.png" 
+              src="/NeoOmics_logo.png" 
               alt="NeoOmics Logo" 
               className="w-12 h-12 transition-all duration-300 hover:scale-110"
             />

@@ -84,7 +84,7 @@ const Contact = () => {
       icon: Mail,
       title: 'Email',
       details: <a href="mailto:admin@neoomics.com" className="text-pharma-teal hover:text-teal-400 transition-colors">admin@neoomics.com</a>,
-      description: 'Send me an email anytime'
+      description: 'Send us an email anytime'
     }
   ];
 
@@ -97,7 +97,7 @@ const Contact = () => {
             Get In <span className="text-pharma-teal">Touch</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Ready to accelerate your drug discovery process? Let's discuss how my computational biology
+            Ready to accelerate your drug discovery process? Let's discuss how NeoOmics's computational biology
             expertise can transform your research.
           </p>
         </div>
@@ -108,7 +108,7 @@ const Contact = () => {
             <h3 className="text-2xl font-bold mb-8">Let's Start a Conversation</h3>
             <p className="text-gray-300 mb-8 leading-relaxed">
               Whether you're looking to optimize your drug discovery pipeline, implement AI/ML solutions,
-              or need expert guidance on computational biology challenges, I'm here to help.
+              or need expert guidance on computational biology challenges, we're here to help.
             </p>
             
             <div className="space-y-6 mb-8">

@@ -73,7 +73,7 @@ const Portfolio = () => {
             Case <span className="text-pharma-teal">Studies</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover how I've helped pharmaceutical and biotech companies accelerate their research
+            How NeoOmics helped pharmaceutical and biotech companies accelerate their research
             and development through innovative computational solutions.
           </p>
         </div>

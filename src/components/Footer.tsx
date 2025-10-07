@@ -13,8 +13,8 @@ const Footer = () => {
       { name: 'Platform Integration', href: '#services' }
     ],
     company: [
-      { name: 'About Me', href: '#about' },
-      { name: 'My Services', href: '#services' },
+      { name: 'About NeoOmics', href: '#about' },
+      { name: 'Services', href: '#services' },
       { name: 'Case Studies', href: '#portfolio' },
       { name: 'Contact', href: '#contact' }
     ]
@@ -68,7 +68,7 @@ const Footer = () => {
             
             {/* Social Links */}
             <div className="mt-6">
-              <h4 className="text-sm font-semibold mb-3 text-gray-400">Follow Me</h4>
+              <h4 className="text-sm font-semibold mb-3 text-gray-400">Follow Us</h4>
               <div className="flex space-x-3">
                 {socialLinks.map((social, index) => {
                   const IconComponent = social.icon;
