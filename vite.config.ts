@@ -9,7 +9,7 @@ export default defineConfig({
     {
       name: 'copy-cname',
       writeBundle() {
-        copyFileSync('CNAME', 'dist/CNAME')
+        copyFileSync('public/CNAME', 'dist/CNAME')
       }
     }
   ],
