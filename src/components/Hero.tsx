@@ -1,4 +1,5 @@
 import { ChevronDown } from 'lucide-react';
+import NetworkBackground from './NetworkBackground';
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -18,13 +19,8 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center gradient-bg text-white overflow-hidden pt-20 md:pt-0">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full"></div>
-        <div className="absolute top-40 right-32 w-24 h-24 border border-white/20 rounded-full"></div>
-        <div className="absolute bottom-32 left-1/4 w-16 h-16 border border-white/20 rounded-full"></div>
-        <div className="absolute bottom-20 right-20 w-20 h-20 border border-white/20 rounded-full"></div>
-      </div>
+      {/* Dynamic Network Background */}
+      <NetworkBackground />
 
       <div className="container mx-auto px-6 text-center relative z-10 mt-4 md:mt-0">
         <div className="mb-6 mt-8 md:mt-0">
